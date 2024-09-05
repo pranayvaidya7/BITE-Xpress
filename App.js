@@ -12,15 +12,17 @@ const heading = React.createElement(
 // JSX (transpiled before it reaches the JS) - PARCEL - BABEL
 
 //JSX => React.createElement => ReactElement-JS Object => HTMLElement(render)
+
 // element inside element
-const elem = <span>element inside element🍒</span>
+const elem = <span>element inside element🍒</span>;
 // in jsx we write "className" not "class"
 const jsxHeading = (
-    <h1 id="heading" className="head">
-      {elem}
-          Namaste JSX Heading🥨
+  <h1 id="heading" className="head">
+    {elem}
+    Namaste JSX Heading🥨
   </h1>
 );
+// ;;;;;;;;;;;;;
 // If one line code then we can avoid writing "return"
 const HeadingCompo = () => <h1>it will get return as a jsx🍙</h1>;
 
@@ -28,7 +30,7 @@ const HeadingCompo = () => <h1>it will get return as a jsx🍙</h1>;
 // Functional Components returns JSX code
 const HeadingComponent = () => (
   <div>
-    <HeadingCompo/>
+    <HeadingCompo />
     {jsxHeading}
     <h1 id="heading" className="head">
       Returns From the Heading Component🍀{" "}
@@ -36,9 +38,8 @@ const HeadingComponent = () => (
   </div>
 );
 
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<HeadingComponent/>)
+root.render(<HeadingComponent />);
 
 /* <div id= "parent">
     <div id= "child1">
