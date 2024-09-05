@@ -22,7 +22,6 @@ const jsxHeading = (
     Namaste JSX Heading🥨
   </h1>
 );
-// ;;;
 // If one line code then we can avoid writing "return"
 const HeadingCompo = () => <h1>it will get return as a jsx🍙</h1>;
 
