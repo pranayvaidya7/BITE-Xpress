@@ -1,91 +1,76 @@
 import RestaurantCard from "./RestaurantCard";
-import { useState } from "react";
-import resList from "../utils/mockData";
-
-// normal JS variable
-let listOfRestaurantJS = [
-  {
-    info: {
-      id: "426730",
-      name: "Anna",
-      cloudinaryImageId:
-        "RX_THUMBNAIL/IMAGES/VENDOR/2024/7/22/ab4cf213-bee8-45ba-9b80-2607d981885f_426730.jpg",
-      cuisines: ["Desserts", "Bakery", "Beverages"],
-      costForTwo: "₹400 for two",
-      areaName: "Ashok Nagar",
-      avgRating: 5.8,
-    },
-  },
-  {
-    info: {
-      id: "426731",
-      name: "Surya",
-      cloudinaryImageId:
-        "RX_THUMBNAIL/IMAGES/VENDOR/2024/7/22/ab4cf213-bee8-45ba-9b80-2607d981885f_426730.jpg",
-      cuisines: ["Desserts", "Bakery", "Beverages"],
-      costForTwo: "₹400 for two",
-      areaName: "Ashok Nagar",
-      avgRating: 4.0,
-    },
-  },
-  {
-    info: {
-      id: "426733",
-      name: "Shyam",
-      cloudinaryImageId:
-        "RX_THUMBNAIL/IMAGES/VENDOR/2024/7/22/ab4cf213-bee8-45ba-9b80-2607d981885f_426730.jpg",
-      cuisines: ["Desserts", "Bakery", "Beverages"],
-      costForTwo: "₹400 for two",
-      areaName: "Ashok Nagar",
-      avgRating: 4.6,
-    },
-  },
-  {
-    info: {
-      id: "426739",
-      name: "BabuRao",
-      cloudinaryImageId:
-        "RX_THUMBNAIL/IMAGES/VENDOR/2024/7/22/ab4cf213-bee8-45ba-9b80-2607d981885f_426730.jpg",
-      cuisines: ["Desserts", "Bakery", "Beverages"],
-      costForTwo: "₹400 for two",
-      areaName: "Ashok Nagar",
-      avgRating: 3.9,
-    },
-  },
-  {
-    info: {
-      id: "426734",
-      name: "woww",
-      cloudinaryImageId:
-        "RX_THUMBNAIL/IMAGES/VENDOR/2024/7/22/ab4cf213-bee8-45ba-9b80-2607d981885f_426730.jpg",
-      cuisines: ["Desserts", "Bakery", "Beverages"],
-      costForTwo: "₹400 for two",
-      areaName: "Ashok Nagar",
-      avgRating: 4.5,
-    },
-  },
-];
+import { useState, useEffect } from "react";
+import Shimmer from "./Shimmer";
 
 const Body = () => {
   //Local state Variable - super powerful variable
-  const [listOfRestaurant, setlistOfRestaurant] = useState(resList);
-  return (
+  const [listOfRest, setListOfRest] = useState([]);
+  const [filterRest, setfilterRest] = useState([]);
+  const [searchText, setsearchText] = useState("");
+  console.log("body render");
+
+  useEffect(() => {
+    console.log("useEffect called");
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    const data = await fetch(
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9715987&lng=77.5945627&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+    );
+    const json = await data.json();
+
+    setListOfRest(
+      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
+
+    setfilterRest(
+      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
+  };
+
+  return listOfRest.length === 0 ? (
+    <Shimmer />
+  ) : (
     <div className="body">
       <div className="filter">
+        <div className="search">
+          <input
+            type="text"
+            className="search-box"
+            value={searchText}
+            onChange={(e) => {
+              setsearchText(e.target.value);
+            }}
+          ></input>
+
+          <button
+            onClick={() => {
+              const selected = listOfRest.filter((res) =>
+                res.info.name.toLowerCase().includes(searchText.toLowerCase())
+              );
+              setfilterRest(selected);
+            }}
+          >
+            Search
+          </button>
+        </div>
+
         <button
           className="filter-btn"
           onClick={() => {
-            const filteredLst = listOfRestaurant.filter(
-              (res) => res.info.avgRating > 4.5
+            const filteredLst = listOfRest.filter(
+              (res) => res.info.avgRating > 4.3
             );
-            setlistOfRestaurant (filteredLst);
+            // setListOfRest(filteredLst);
           }}
         >
           Top Rated Restaurants
         </button>
       </div>
+
       <div className="res-container">
-        {listOfRestaurant.map((restaurant) => (
+        {filterRest.map((restaurant) => (
           <RestaurantCard key={restaurant.info.id} resData={restaurant} />
         ))}
       </div>
