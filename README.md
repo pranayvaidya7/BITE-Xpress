@@ -54,3 +54,7 @@ import {Components} from "path" ;
 -Normal JS utility function
 -storred in react components
 -useState && useEffect  (most using Hooks)
+
+# 2 types Routing in web App
+- Client Side Routing
+- Server Side Routing
