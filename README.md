@@ -1,4 +1,4 @@
-# Learning React from Akshay Saini🎸
+# React Learnings 🎸
 
 # Parcel
 
