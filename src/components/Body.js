@@ -2,34 +2,27 @@ import RestCard from "./RestCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
+import useBody from "../utils/useBody";
 
 const Body = () => {
-  //Local state Variable - super powerful variable
-  const [listOfRest, setListOfRest] = useState([]);
-  const [filterRest, setfilterRest] = useState([]);
-  const [searchText, setsearchText] = useState("");
-  console.log("body render");
+  const onlineStatus = useOnlineStatus();
+  const {
+    listOfRest,
+    filterRest,
+    searchText,
+    setsearchText,
+    handleSearch,
+    filterTopRated,
+  } = useBody();
 
-  useEffect(() => {
-    console.log("useEffect called");
-    fetchData();
-  }, []);
-
-  const fetchData = async () => {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9715987&lng=77.5945627&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+  if (onlineStatus === false) {
+    return (
+      <h1>
+        Looks like you are offline !!! Chek your internet Connectivity !!!
+      </h1>
     );
-    const json = await data.json();
-
-    setListOfRest(
-      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
-
-    setfilterRest(
-      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
-  };
-
+  }
   return listOfRest.length === 0 ? (
     <Shimmer />
   ) : (
@@ -45,27 +38,10 @@ const Body = () => {
             }}
           ></input>
 
-          <button
-            onClick={() => {
-              const selected = listOfRest.filter((res) =>
-                res.info.name.toLowerCase().includes(searchText.toLowerCase())
-              );
-              setfilterRest(selected);
-            }}
-          >
-            Search
-          </button>
+          <button onClick={handleSearch}>Search</button>
         </div>
 
-        <button
-          className="filter-btn"
-          onClick={() => {
-            const filteredLst = listOfRest.filter(
-              (res) => res.info.avgRating > 4.3
-            );
-            // setListOfRest(filteredLst);
-          }}
-        >
+        <button className="filter-btn" onClick={filterTopRated}>
           Top Rated Restaurants
         </button>
       </div>

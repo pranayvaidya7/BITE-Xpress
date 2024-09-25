@@ -1,6 +1,6 @@
 # Learning React from Akshay Saini🎸
 
-# Parcel
+<!-- # Parcel
 
 - Dev Build
 - Local Server
@@ -18,13 +18,13 @@
 - Error Handling
 - Way to add on HTTPS
 - Tree Shaking
-- Different Dev && Production Bundle
+- Different Dev && Production Bundle -->
 
 # Food App Layout
 
 /\*\*
 
-- Header
+<!-- - Header
 - - Logo
 - - Nav Items
 - Body
@@ -36,9 +36,9 @@
 - - Links
 - - Address
 - - Contact
-    \*\*/
+    \*\*/ -->
 
-Two types ofExport/Import
+<!-- Two types ofExport/Import
 
 - Default Export/ Import
 
@@ -48,13 +48,41 @@ import Component from "path" ;
 - Named Export/ Import
 
 export const Components
-import {Components} from "path" ;
+import {Components} from "path" ; -->
 
-#React Hooks
+<!-- #React Hooks
 -Normal JS utility function
 -storred in react components
 -useState && useEffect  (most using Hooks)
 
 # 2 types Routing in web App
 - Client Side Routing
-- Server Side Routing
+- Server Side Routing -->
+
+
+<!-- -----MOUNTING-----
+
+// Constructor (dummy)
+// renderMatches(dummy)
+//   <HTML dummy>
+//   Component Did Mount
+//       <API Call>
+//         <globalThis.setState> 
+// State Variable Is Updated
+
+ ------UPDATE------
+
+    render (API)
+    <HTML (new api data)
+    Component Did Update -->
+
+# if use.....js is used, it is general convention that it is a Custom hook 
+
+
+<!---- Components Bundling Chunking ----
+
+Coded Splitting
+Dynamic Bundling
+lazy loading
+on Demand loading
+dynamix import -->
