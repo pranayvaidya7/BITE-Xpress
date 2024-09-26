@@ -1,10 +1,11 @@
-import RestCard from "./RestCard";
-import { useState, useEffect } from "react";
+import RestCard, { withPromotedLabel } from "./RestCard";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import useBody from "../utils/useBody";
+import { withPromotedLabel } from "./RestCard";
 
+const RestCardPromoted = withPromotedLabel(RestCard);
 const Body = () => {
   const onlineStatus = useOnlineStatus();
   const {
@@ -38,7 +39,10 @@ const Body = () => {
               setsearchText(e.target.value);
             }}
           ></input>
-          <button className="px-4 bg-green-200 m-4 rounded-lg" onClick={handleSearch}>
+          <button
+            className="px-4 bg-green-200 m-4 rounded-lg"
+            onClick={handleSearch}
+          >
             Search
           </button>
         </div>
@@ -55,7 +59,11 @@ const Body = () => {
       <div className="res-container flex flex-wrap">
         {filterRest.map((restaurant) => (
           <Link key={restaurant.info.id} to={"/rest/" + restaurant.info.id}>
-            <RestCard resData={restaurant} />
+            {restaurant.info.isOpen ? (
+              <RestCardPromoted resData={restaurant} />
+            ) : (
+              <RestCard resData={restaurant} />
+            )}
           </Link>
         ))}
       </div>
