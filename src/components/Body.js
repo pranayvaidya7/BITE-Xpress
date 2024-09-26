@@ -23,30 +23,36 @@ const Body = () => {
       </h1>
     );
   }
+
   return listOfRest.length === 0 ? (
     <Shimmer />
   ) : (
     <div className="body">
-      <div className="filter">
-        <div className="search">
+      <div className="filter flex">
+        <div className="search m-4 p-4">
           <input
             type="text"
-            className="search-box"
+            className="border border-solid border-black"
             value={searchText}
             onChange={(e) => {
               setsearchText(e.target.value);
             }}
           ></input>
-
-          <button onClick={handleSearch}>Search</button>
+          <button className="px-4 bg-green-200 m-4 rounded-lg" onClick={handleSearch}>
+            Search
+          </button>
         </div>
-
-        <button className="filter-btn" onClick={filterTopRated}>
-          Top Rated Restaurants
-        </button>
+        <div className="search m-4 p-2 flex items-center">
+          <button
+            className="filter-btn px-4 py-2 bg-gray-200 rounded-lg"
+            onClick={filterTopRated}
+          >
+            Top Rated Restaurants
+          </button>
+        </div>
       </div>
 
-      <div className="res-container">
+      <div className="res-container flex flex-wrap">
         {filterRest.map((restaurant) => (
           <Link key={restaurant.info.id} to={"/rest/" + restaurant.info.id}>
             <RestCard resData={restaurant} />
