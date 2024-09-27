@@ -21,10 +21,11 @@ class UserClass extends React.Component {
     });
   }
   render() {
-    const { login } = this.state.userInfo;
+    const { login, avatar_url } = this.state.userInfo;
     const { location, education } = this.props;
     return (
       <div className="user-card">
+        <img src={avatar_url} className="py-2 w-56"/>
         <h1>{login}</h1>
         <h2>{location}</h2>
         <h2>{education}</h2>

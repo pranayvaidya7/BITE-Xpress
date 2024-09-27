@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import useBody from "../utils/useBody";
 import { withPromotedLabel } from "./RestCard";
+import UserContext from "../utils/UserContext";
+import { useContext } from "react";
 
 const RestCardPromoted = withPromotedLabel(RestCard);
 const Body = () => {
@@ -24,7 +26,7 @@ const Body = () => {
       </h1>
     );
   }
-
+  const { logInUser, setUserName } = useContext(UserContext);
   return listOfRest.length === 0 ? (
     <Shimmer />
   ) : (
@@ -53,6 +55,16 @@ const Body = () => {
           >
             Top Rated Restaurants
           </button>
+        </div>
+        <div className="search m-4 p-2 flex items-center">
+          <labeL>UserName: </labeL>
+          <input
+            className="border border-black p-2"
+            value={logInUser}
+            onChange={(e) => {
+              setUserName(e.target.value);
+            }}
+          ></input>
         </div>
       </div>
 

@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useParams } from "react-router-dom";
 import Shimmer from "./Shimmer";
 import useRestMenu from "../utils/useRestMenu";
 import ResCategory from "./ResCategory";
+import UserContext from "../utils/UserContext";
 
 const RestMenu = () => {
   const { resId } = useParams();
@@ -13,6 +14,7 @@ const RestMenu = () => {
 
   const { name, cuisines, costForTwo } = restInfo?.cards[2].card?.card?.info;
 
+  const userData  = useContext(UserContext)
   const { itemCards } =
     restInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
       ?.card;
@@ -23,7 +25,6 @@ const RestMenu = () => {
         c.card?.card?.["@type"] ===
         "type.googleapis.com/swiggy.presentation.food.v2.NestedItemCategory"
     );
-  console.log(categories);
 
   return (
     <div className="text-center">
