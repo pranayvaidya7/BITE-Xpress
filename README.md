@@ -77,14 +77,19 @@ import {Components} from "path" ; -->
 
 # if use.....js is used, it is general convention that it is a Custom hook
 
-<!---- Components Bundling Chunking ----
+-- Components Bundling Chunking ----
 
 Coded Splitting
 Dynamic Bundling
 lazy loading
 on Demand loading
-dynamix import -->
+dynamix import
 
+# Redux ToolKit
 
-<!-- IMP LINK -->
-<!-- http://localhost:1234/rest/393840 -->
+    - install@reduxjs/toolkit and react-redux
+    - build our store
+    - connect our store to our app
+    - slice (cartSlice)
+    - dispatch(action)
+    - selector
