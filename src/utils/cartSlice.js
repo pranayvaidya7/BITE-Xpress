@@ -6,6 +6,7 @@ const cartSlice = createSlice({
     items: [],
   },
   reducers: {
+    // Redux uses Immer behind the Scene
     addItem: (state, action) => {
       // mutating the state here
       state.items.push(action.payload);
@@ -14,12 +15,12 @@ const cartSlice = createSlice({
       state.items.pop();
     },
     clearCart: (state) => {
+      console.log(current(state));
       state.items.length = 0;
+      // return { items: [] };
     },
   },
 });
 
 export const { addItem, removeItem, clearCart } = cartSlice.actions;
 export default cartSlice.reducer;
-
-

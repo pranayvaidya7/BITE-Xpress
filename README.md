@@ -93,3 +93,17 @@ dynamix import
     - slice (cartSlice)
     - dispatch(action)
     - selector
+
+# in canilla redux we dnt mutate the States
+
+# Types of Testing (Developer)
+
+    - UNIT testing
+    - INTEGRATION testing
+    - END-TO-END testing
+
+# Setting Up testing in our app
+- Install react testing library
+- Install jest
+- Install Babel dependencies
+- config Babel
