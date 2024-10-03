@@ -93,3 +93,23 @@ dynamix import
     - slice (cartSlice)
     - dispatch(action)
     - selector
+
+# in canilla redux we dnt mutate the States
+
+# Types of Testing (Developer)
+
+    - UNIT testing
+    - INTEGRATION testing
+    - END-TO-END testing
+
+# Setting Up testing in our app
+- Install react testing library
+- Install jest
+- Install Babel dependencies
+- configure Babel
+- Configure Parcel Config file to disable default babel transpilation
+- Jest - npx jest --init
+- Install JSDOM library
+- Install @babel/preset-react to make JSX work in test cases
+- Include @babel/preset-react inside my babel config
+- Install @testing-library/jest-dom
