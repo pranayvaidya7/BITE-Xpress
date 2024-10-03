@@ -106,6 +106,7 @@ dynamix import
 - Install react testing library
 - Install jest
 - Install Babel dependencies
+<<<<<<< HEAD
 - configure Babel
 - Configure Parcel Config file to disable default babel transpilation
 - Jest - npx jest --init
@@ -113,3 +114,6 @@ dynamix import
 - Install @babel/preset-react to make JSX work in test cases
 - Include @babel/preset-react inside my babel config
 - Install @testing-library/jest-dom
+=======
+- config Babel
+>>>>>>> f41d4357fbe68c727fc5a9229504b8fe861f87b3
