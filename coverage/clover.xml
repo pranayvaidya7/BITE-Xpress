@@ -1,11 +1,133 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1727566035716" clover="3.2.0">
-  <project timestamp="1727566035716" name="All files">
-    <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1" elements="3" coveredelements="3" complexity="0" loc="2" ncloc="2" packages="1" files="1" classes="1"/>
-    <file name="Sum.js" path="E:\z STUDY COURSES\Namaste-React\Codes\src\components\Sum.js">
-      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <line num="1" count="1" type="stmt"/>
-      <line num="2" count="1" type="stmt"/>
-    </file>
+<coverage generated="1728076109399" clover="3.2.0">
+  <project timestamp="1728076109399" name="All files">
+    <metrics statements="82" coveredstatements="79" conditionals="32" coveredconditionals="20" methods="33" coveredmethods="31" elements="147" coveredelements="130" complexity="0" loc="82" ncloc="82" packages="3" files="12" classes="12"/>
+    <package name="components">
+      <metrics statements="54" coveredstatements="52" conditionals="28" coveredconditionals="18" methods="23" coveredmethods="22"/>
+      <file name="Body.js" path="E:\z STUDY COURSES\Namaste-React\Codes\src\components\Body.js">
+        <metrics statements="11" coveredstatements="9" conditionals="6" coveredconditionals="4" methods="4" coveredmethods="3"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="7" type="stmt"/>
+        <line num="20" count="7" type="stmt"/>
+        <line num="22" count="7" type="cond" truecount="1" falsecount="1"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="29" count="7" type="stmt"/>
+        <line num="30" count="7" type="cond" truecount="2" falsecount="0"/>
+        <line num="42" count="1" type="stmt"/>
+        <line num="66" count="0" type="stmt"/>
+        <line num="74" count="27" type="stmt"/>
+      </file>
+      <file name="Cart.js" path="E:\z STUDY COURSES\Namaste-React\Codes\src\components\Cart.js">
+        <metrics statements="6" coveredstatements="6" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="8" type="stmt"/>
+        <line num="9" count="4" type="stmt"/>
+        <line num="10" count="4" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="13" count="4" type="stmt"/>
+      </file>
+      <file name="Contact.js" path="E:\z STUDY COURSES\Namaste-React\Codes\src\components\Contact.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="8" type="stmt"/>
+      </file>
+      <file name="Header.js" path="E:\z STUDY COURSES\Namaste-React\Codes\src\components\Header.js">
+        <metrics statements="7" coveredstatements="7" conditionals="4" coveredconditionals="2" methods="3" coveredmethods="3"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="10" count="8" type="stmt"/>
+        <line num="12" count="8" type="stmt"/>
+        <line num="14" count="8" type="stmt"/>
+        <line num="17" count="15" type="stmt"/>
+        <line num="19" count="8" type="stmt"/>
+        <line num="47" count="1" type="cond" truecount="1" falsecount="1"/>
+      </file>
+      <file name="ItemList.js" path="E:\z STUDY COURSES\Namaste-React\Codes\src\components\ItemList.js">
+        <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="5" type="stmt"/>
+        <line num="9" count="5" type="stmt"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="14" count="5" type="stmt"/>
+        <line num="17" count="7" type="stmt"/>
+        <line num="33" count="2" type="stmt"/>
+      </file>
+      <file name="RestCard.js" path="E:\z STUDY COURSES\Namaste-React\Codes\src\components\RestCard.js">
+        <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="5" count="28" type="stmt"/>
+        <line num="7" count="28" type="stmt"/>
+        <line num="8" count="28" type="stmt"/>
+        <line num="26" count="2" type="stmt"/>
+        <line num="27" count="1" type="stmt"/>
+        <line num="28" count="27" type="stmt"/>
+      </file>
+      <file name="RestMenu.js" path="E:\z STUDY COURSES\Namaste-React\Codes\src\components\RestMenu.js">
+        <metrics statements="13" coveredstatements="13" conditionals="16" coveredconditionals="10" methods="4" coveredmethods="4"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="4" type="stmt"/>
+        <line num="10" count="3" type="stmt"/>
+        <line num="11" count="3" type="stmt"/>
+        <line num="14" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="18" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="21" count="2" type="stmt"/>
+        <line num="25" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="29" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="31" count="36" type="stmt"/>
+        <line num="35" count="2" type="stmt"/>
+        <line num="43" count="20" type="stmt"/>
+        <line num="49" count="1" type="cond" truecount="1" falsecount="1"/>
+      </file>
+      <file name="Sum.js" path="E:\z STUDY COURSES\Namaste-React\Codes\src\components\Sum.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.mocks">
+      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="resCardMock.js" path="E:\z STUDY COURSES\Namaste-React\Codes\src\components\mocks\resCardMock.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="2" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="utils">
+      <metrics statements="27" coveredstatements="26" conditionals="4" coveredconditionals="2" methods="10" coveredmethods="9"/>
+      <file name="appStore.js" path="E:\z STUDY COURSES\Namaste-React\Codes\src\utils\appStore.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="4" count="2" type="stmt"/>
+      </file>
+      <file name="cartSlice.js" path="E:\z STUDY COURSES\Namaste-React\Codes\src\utils\cartSlice.js">
+        <metrics statements="6" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="2"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="24" count="2" type="stmt"/>
+      </file>
+      <file name="useBody.js" path="E:\z STUDY COURSES\Namaste-React\Codes\src\utils\useBody.js">
+        <metrics statements="20" coveredstatements="20" conditionals="4" coveredconditionals="2" methods="7" coveredmethods="7"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="7" type="stmt"/>
+        <line num="4" count="7" type="stmt"/>
+        <line num="5" count="7" type="stmt"/>
+        <line num="7" count="7" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="11" count="7" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="18" count="2" type="stmt"/>
+        <line num="20" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="21" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="24" count="7" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="26" count="8" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="31" count="7" type="stmt"/>
+        <line num="32" count="8" type="stmt"/>
+        <line num="33" count="1" type="stmt"/>
+        <line num="35" count="7" type="stmt"/>
+      </file>
+    </package>
   </project>
 </coverage>

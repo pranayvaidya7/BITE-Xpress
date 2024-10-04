@@ -7,7 +7,7 @@ import UserContext from "../utils/UserContext";
 import { useSelector } from "react-redux";
 
 const Header = () => {
-  const [btnName, setbtnName] = useState("LogIn");
+  const [btnName, setbtnName] = useState("Login");
 
   const { logInUser } = useContext(UserContext);
 
@@ -19,7 +19,9 @@ const Header = () => {
   return (
     <div className="flex justify-between bg-pink-100 shadow-lg sm:bg-yellow-100 lg:bg-green-100">
       <div className="logo-container">
-        <img className="w-44" src={LOGO_URL} alt="Logo" />
+        <Link to="/">
+          <img className="w-36 rounded-lg" src={LOGO_URL} alt="Logo" />
+        </Link>
       </div>
       <div className="flex items-center">
         <ul className="flex p-4 m-4">
@@ -42,13 +44,14 @@ const Header = () => {
           <li className=" font-bold px-4">
             <Link to="/cart">Cart -({cartItems.length} items)</Link>
           </li>
+          <li className="px-4 font-bold  text-xl">{logInUser}</li>
           <button
-            className="login px-4 font-bold"
-            onClick={() => setbtnName(btnName === "LogIn" ? "LogOut" : "LogIn")}
+            className="login px-4 font-bold border border-black
+             rounded-lg"
+            onClick={() => setbtnName(btnName === "Login" ? "LogOut" : "Login")}
           >
             {btnName}
           </button>
-          <li className="px-4 font-bold">{logInUser}</li>
         </ul>
       </div>
     </div>

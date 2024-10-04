@@ -1,14 +1,16 @@
 import { CDN_URL } from "../utils/constants";
 
-
 const RestCard = (props) => {
   const { resData } = props;
   const { name, cuisines, avgRating, costForTwo, areaName, cloudinaryImageId } =
     resData?.info;
   return (
-    <div className="res-card m-4 p-4 w-[250px] bg-gray-200 rounded-lg hover:bg-gray-300">
+    <div
+      data-testid="resCard"
+      className="res-card m-4 p-4 w-[250px] h-[500px] bg-gray-200 rounded-lg hover:bg-gray-300 "
+    >
       <img
-        className="rounded-lg"
+        className="rounded-lg w-full object-cover"
         alt="res-logo"
         src={CDN_URL + cloudinaryImageId}
       />
@@ -30,7 +32,7 @@ export const withPromotedLabel = (RestCard) => {
         <label className="absolute bg-green-700 text-white m-2 p-2 rounded-lg">
           Promoted
         </label>
-        <RestCard {...props}/>
+        <RestCard {...props} />
       </div>
     );
   };

@@ -21,6 +21,21 @@ it("Should load button name inside contact us component", () => {
 });
 
 describe("Contact us Page Test cases", () => {
+  // beforeAll(() => {
+  //   console.log("Before All");
+  // });
+
+  // beforeEach(() => {
+  //   console.log("Before Each");
+  // });
+
+  // afterAll(() => {
+  //   console.log("After All");
+  // });
+
+  // afterEach(() => {
+  //   console.log("After Each");
+  // });
   
   it("Should load input name inside contact us component", () => {
     render(<Contact />);

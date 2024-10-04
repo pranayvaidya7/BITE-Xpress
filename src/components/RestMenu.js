@@ -10,34 +10,43 @@ const RestMenu = () => {
   const restInfo = useRestMenu(resId);
   const [showIndex, setShowIndex] = useState(null);
 
+  // Render a loading state while fetching restaurant info
   if (restInfo === null) return <Shimmer />;
 
-  const { name, cuisines, costForTwo } = restInfo?.cards[2].card?.card?.info;
+  // Destructure restaurant info with safety checks
+  const { name, cuisines, costForTwo } =
+    restInfo?.cards[2]?.card?.card?.info || {};
 
-  const userData  = useContext(UserContext)
-  const { itemCards } =
-    restInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
-      ?.card;
+  // Get user data from context
+  const userData = useContext(UserContext);
+
+  // Safety checks when accessing nested properties
+  const itemCards =
+    restInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card
+      ?.itemCards || [];
 
   const categories =
     restInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
       (c) =>
         c.card?.card?.["@type"] ===
         "type.googleapis.com/swiggy.presentation.food.v2.NestedItemCategory"
-    );
+    ) || [];
 
   return (
     <div className="text-center">
-      <h1 className="font-bold my-6 text-2xl">{name}</h1>
+      <h1 className="font-bold my-6 text-2xl">{name || "Restaurant Name"}</h1>
       <p className="font-bold text-lg">
-        {cuisines.join(", ")} -₹ {costForTwo / 100}
+        {cuisines?.join(", ") || "Cuisines not available"} - ₹{" "}
+        {costForTwo ? (costForTwo / 100).toFixed(2) : "N/A"}
       </p>
       {categories.map((category, index) => (
         <ResCategory
-          key={category?.card?.card.categories[0].itemCards[0].card.info.id}
+          key={
+            category?.card?.card?.categories[0]?.itemCards[0]?.card?.info?.id
+          }
           data={category?.card?.card}
-          showItems= {index === showIndex? true : false }
-          setShowIndex= {() =>setShowIndex(index === showIndex ? null : index)}
+          showItems={index === showIndex}
+          setShowIndex={() => setShowIndex(index === showIndex ? null : index)}
         />
       ))}
     </div>

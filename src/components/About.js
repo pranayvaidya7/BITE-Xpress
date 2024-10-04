@@ -5,17 +5,15 @@ import UserContext from "../utils/UserContext";
 class About extends Component {
   render() {
     return (
-      <div>
-        <h1>About</h1>
-
-        <h2>This is my React Page About</h2>
+      <div className="text-center m-4 p-4">
+        <h1 className='font-bold text-3xl p-4 m-4'>About Us</h1>
 
         <UserClass
           name="Pranay"
           location="Bhilai, India"
           education="CSE student"
         />
-        <div className="flex">
+        <div className="flex justify-center">
             User : 
             <UserContext.Consumer>
               {({logInUser}) => (

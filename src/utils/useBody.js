@@ -1,4 +1,3 @@
-import React from "react";
 import { useState, useEffect } from "react";
 const useBody = () => {
   const [listOfRest, setListOfRest] = useState([]);
@@ -6,7 +5,6 @@ const useBody = () => {
   const [searchText, setsearchText] = useState("");
 
   useEffect(() => {
-    console.log("useEffect called");
     fetchData();
   }, []);
 

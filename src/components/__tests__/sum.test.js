@@ -1,8 +1,7 @@
-import { sum } from "../sum";
+import { sum } from "../Sum";
 
-test("should return sum of 2 no", () => {
+test("should return sum of 2 numbers", () => {
   const res = sum(3, 4);
-
-  //Asserion
+  // Assertion
   expect(res).toBe(7);
 });

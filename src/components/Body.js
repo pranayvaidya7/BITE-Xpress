@@ -1,11 +1,11 @@
+import { useContext } from "react";
+import { Link } from "react-router-dom";
 import RestCard, { withPromotedLabel } from "./RestCard";
 import Shimmer from "./Shimmer";
-import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import useBody from "../utils/useBody";
-import { withPromotedLabel } from "./RestCard";
 import UserContext from "../utils/UserContext";
-import { useContext } from "react";
+
 
 const RestCardPromoted = withPromotedLabel(RestCard);
 const Body = () => {
@@ -35,6 +35,7 @@ const Body = () => {
         <div className="search m-4 p-4">
           <input
             type="text"
+            data-testid="searchInput"
             className="border border-solid border-black"
             value={searchText}
             onChange={(e) => {
@@ -57,9 +58,9 @@ const Body = () => {
           </button>
         </div>
         <div className="search m-4 p-2 flex items-center">
-          <label>UserName: </label>
+          <label>Username: </label>
           <input
-            className="border border-black p-2"
+            className="border border-black p-2 m-2 rounded-lg"
             value={logInUser}
             onChange={(e) => {
               setUserName(e.target.value);
